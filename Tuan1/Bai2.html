@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex-container {
+            display: flex;
+            flex-flow: row;
+        }
+        .flex-container > div{
+            text-align: center;
+            margin: 3px;
+        }
+        .header{
+            background: brown;
+            text-align: center;
+            line-height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var header = document.createElement('h1');
+        header.setAttribute('class', 'header');
+        header.appendChild(document.createTextNode('Bài 2'));
+        document.body.appendChild(header);
+
+        var conten = document.createElement('div');
+        conten.setAttribute('class', 'flex-container');
+
+        var p1 = document.createElement('div');
+        p1.style.background = 'blue';
+        p1.appendChild(document.createTextNode("This is a unitless proportion value that dictates how much available space along the main axis each flex item will take up compared to other flex items. In this case, we're giving each <article> element the same value (a value of 1), which means they'll all take up an equal amount of the spare space left after properties like padding and margin have been set. This value is proportionally shared among the flex items: giving each flex item a value of 400000 would have exactly the same effect."));
+        conten.appendChild(p1);  
+
+        var p2 = document.createElement('div');
+        p2.style.background = 'red';
+        p2.appendChild(document.createTextNode("This is a unitless proportion value that dictates how much available space along the main axis each flex item will take up compared to other flex items. In this case, we're giving each <article> element the same value (a value of 1), which means they'll all take up an equal amount of the spare space left after properties like padding and margin have been set. This value is proportionally shared among the flex items: giving each flex item a value of 400000 would have exactly the same effect."));
+        conten.appendChild(p2);
+
+        var p3 = document.createElement('div');
+        p3.style.background = 'white';
+        p3.appendChild(document.createTextNode("This is a unitless proportion value that dictates how much available space along the main axis each flex item will take up compared to other flex items. In this case, we're giving each <article> element the same value (a value of 1), which means they'll all take up an equal amount of the spare space left after properties like padding and margin have been set. This value is proportionally shared among the flex items: giving each flex item a value of 400000 would have exactly the same effect."));
+        conten.appendChild(p3);
+        document.body.appendChild(conten);
+
+        
+        
+    </script>
+</body>
+</html>

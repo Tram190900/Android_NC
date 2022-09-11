@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var title = document.createElement('h1');
+        title.appendChild(document.createTextNode("Bài 1"));
+        document.body.appendChild(title);
+
+        var ipa = document.createElement('input');
+        ipa.setAttribute('placeholder', 'Input a');
+        document.body.appendChild(ipa);
+        document.body.appendChild(document.createElement('br'));
+
+        var ipb = document.createElement('input');
+        ipb.setAttribute('placeholder', 'Input b');
+        document.body.appendChild(ipb);
+        document.body.appendChild(document.createElement('br'));
+
+        var btn = document.createElement('button');
+        btn.innerText = "Submit";
+        document.body.appendChild(btn);
+        btn.onclick = function(){
+            alert(parseInt(ipa.value) + parseInt(ipb.value));
+        }
+    </script>
+</body>
+</html>
