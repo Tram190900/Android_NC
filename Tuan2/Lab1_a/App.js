@@ -14,12 +14,16 @@ export default function App() {
           </View>
           <View>
             <Text style={[styles.text, {fontSize:35}]}>GROW YOUR BUSINESS</Text>
-            <Text style={[styles.text, {fontSize:18, marginTop:30}]}>We will help you to grow your business using online server</Text>
+            <Text style={[styles.text, {fontSize:18, marginTop:35}]}>We will help you to grow your business using online server</Text>
+          </View>
+          <View style={styles.buttonView}>
+            <Button style={styles.buttonBg} title='Login' color={'#E3C000'}></Button>
+            <Button title='Sign up' color={'#E3C000'}></Button>
           </View>
           <View>
-            <Button title='Login' style={styles.button}></Button>
-            <Button title='Sign up' style={styles.button}></Button>
+            <Text style={[styles.text, {fontSize:20}]} >HOW WE WORK?</Text>
           </View>
+          
       </LinearGradient>
       
     </View>
@@ -28,6 +32,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    position:'relative',
     alignItems: 'center',
     backgroundColor:'#00CCF9',
     height:'100%'
@@ -37,7 +42,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     top: 0,
-    height:'90%',
+    height:'100%',
   },
   Logo:{
     margin:130,
@@ -51,5 +56,12 @@ const styles = StyleSheet.create({
     marginRight:30,
     fontWeight:'bold'
   },
-  
+  buttonView:{
+    flex:0.5,
+    flexDirection: "row",
+    alignItems:'center',
+    justifyContent:'space-evenly',
+  },
+  buttonBg:{
+  },
 });
