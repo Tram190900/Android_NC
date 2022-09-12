@@ -19,11 +19,11 @@ export default function App() {
               FORGET PASSWORD</Text>
             <Text style={[styles.text, {fontSize:18}]}>Provide your account’s email for which you want to reset your password</Text>
           </View>
-          <View style={{flex:0.3, justifyContent:'center'}}>
+          <View style={{flex:1, justifyContent:'center'}}>
             <TextInput style={styles.textInput} placeholder='Email'>
             </TextInput>
           </View>
-          <View style={{flex:0.4}}>
+          <View style={{flex:2}}>
             <TouchableOpacity>
               <Text style={styles.buttonBg}>NEXT</Text>
             </TouchableOpacity>
@@ -40,17 +40,18 @@ const styles = StyleSheet.create({
     height:'100%',
   },
   background:{
+    //flexWrap:'wrap',
     height:'100%',
     padding:10
   },
   Logo:{
-    flex:0.8,
+    flex:4,
     justifyContent:'center',
     alignItems:'center',
   },
   textView:{
-    flex: 0.2,
-    justifyContent:'center',
+    flex: 1.5,
+    //justifyContent:'center',
   },
   text:{
     textAlign:'center',
