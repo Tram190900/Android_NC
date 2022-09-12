@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Logo from '../Lab1_a/assets/img/circle.png';
 
@@ -16,10 +16,12 @@ export default function App() {
             <Text style={[styles.text, {fontSize:35}]}>GROW YOUR BUSINESS</Text>
             <Text style={[styles.text, {fontSize:18, marginTop:35}]}>We will help you to grow your business using online server</Text>
           </View>
-          <View style={styles.buttonView}>
-            <Button style={styles.buttonBg} title='Login' color={'#E3C000'}></Button>
-            <Button title='Sign up' color={'#E3C000'}></Button>
-          </View>
+          <TouchableOpacity style={styles.buttonView}>
+            <Text style={styles.buttonBg}>Login</Text>
+            <Text style={styles.buttonBg}>Sign up</Text>
+            {/* <Button style={styles.buttonBg} title='Login' color={'#E3C000'}></Button>
+            <Button title='Sign up' color={'#E3C000'}></Button> */}
+          </TouchableOpacity>
           <View>
             <Text style={[styles.text, {fontSize:20}]} >HOW WE WORK?</Text>
           </View>
@@ -63,5 +65,11 @@ const styles = StyleSheet.create({
     justifyContent:'space-evenly',
   },
   buttonBg:{
+    backgroundColor:'#E3C000',
+    width:'29%',
+    fontSize:20,
+    fontWeight:'bold',
+    textAlign:'center',
+    padding:7,
   },
 });
