@@ -7,7 +7,7 @@ export default function App() {
   return (
     <View  style={styles.container}>
       <LinearGradient
-        colors={['#C7F4F6','#D1F4F6','#E5F4F5','#00CCF9','transparent']}
+        colors={['#E5F4F5','#D1F4F6','#C7F4F6','#00CCF9','transparent']}
         style={styles.background}>
           <View>
             <Image source ={Logo} style={styles.Logo}></Image>
@@ -16,12 +16,14 @@ export default function App() {
             <Text style={[styles.text, {fontSize:35}]}>GROW YOUR BUSINESS</Text>
             <Text style={[styles.text, {fontSize:18, marginTop:35}]}>We will help you to grow your business using online server</Text>
           </View>
-          <TouchableOpacity style={styles.buttonView}>
-            <Text style={styles.buttonBg}>Login</Text>
-            <Text style={styles.buttonBg}>Sign up</Text>
-            {/* <Button style={styles.buttonBg} title='Login' color={'#E3C000'}></Button>
-            <Button title='Sign up' color={'#E3C000'}></Button> */}
-          </TouchableOpacity>
+          <View style={styles.buttonView}>
+            <TouchableOpacity>
+              <Text style={styles.buttonBg}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.buttonBg}>Sign up</Text>
+            </TouchableOpacity>
+          </View>
           <View>
             <Text style={[styles.text, {fontSize:20}]} >HOW WE WORK?</Text>
           </View>
@@ -60,13 +62,13 @@ const styles = StyleSheet.create({
   },
   buttonView:{
     flex:0.5,
-    flexDirection: "row",
+    flexDirection: 'row',
     alignItems:'center',
     justifyContent:'space-evenly',
   },
   buttonBg:{
     backgroundColor:'#E3C000',
-    width:'29%',
+    width:95,
     fontSize:20,
     fontWeight:'bold',
     textAlign:'center',
