@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Button} from '@react-native-material/core';
 import Rectangle_1 from '../Lab1_c/assets/img/Rectangle1.png'
 
 export default function App() {
@@ -29,9 +30,7 @@ export default function App() {
           <Image source={Rectangle_1}></Image> */}
         </View>
         <View style={{flex:1}}>
-          <TouchableOpacity>
-            <Text style={styles.button}>VERIFY CODE</Text>
-          </TouchableOpacity>
+          <Button title='VERITY CODE' style={styles.button}></Button>
         </View>
       </LinearGradient>
       
@@ -48,6 +47,7 @@ const styles = StyleSheet.create({
     height:'100%',
   },
   background:{
+    flex: 1,
     left:0,
     right:0,
     top:0,
