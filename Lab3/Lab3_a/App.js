@@ -10,9 +10,19 @@ import yl from '../Lab3_a/assets/img/yellow_block.svg';
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
 export default function App() {
-  const [count, setCount] = useState();
-  const [tienTam, setTienTam] = useState();
+  const [count, setCount] = useState(0);
+  const [tienTam, setTienTam] = useState(141800);
   const [tongTien, setTongTien] = useState();
+  function getAddCount(){
+    setCount(count+1);
+    setTienTam((count+1)*141800);
+    setTongTien((count+1)*141800);
+  }
+  function getMinnusCount(){
+    setCount(preCount => preCount -1);
+    setTienTam((count-1)*141800);
+    setTongTien((count-1)*141800);
+  }
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.infor}>
@@ -27,9 +37,11 @@ export default function App() {
             <Text>141.800</Text>
             <View style={styles.btnNumber}>
               {/* <Image source={minus}></Image> */}
-              <IconButton icon={props => <Icon name='plus' {...props} style={{backgroundColor:'#C4C4C4'}}></Icon>}></IconButton>
-              <Text style={{paddingLeft:5, paddingRight:5, fontWeight:'bold', fontSize:16}}>1</Text>
-              <IconButton icon={props => <Icon name='minus' {...props} style={{backgroundColor:'#C4C4C4'}}></Icon>}></IconButton>
+              <IconButton icon={props => <Icon name='plus' {...props} style={{backgroundColor:'#C4C4C4'}} 
+                          onPress={() => getAddCount()}></Icon>}></IconButton>
+              <Text style={{paddingLeft:5, paddingRight:5, fontWeight:'bold', fontSize:16}}>{count}</Text>
+              <IconButton icon={props => <Icon name='minus' {...props} style={{backgroundColor:'#C4C4C4'}}
+                          onPress={()=>getMinnusCount()}></Icon>}></IconButton>
               <Text style={{color:'#134FEC', marginLeft:'15%',}}>Mua sau</Text>
             </View>
           </View>
@@ -53,13 +65,13 @@ export default function App() {
         </View>
         <View style={styles.tien}>
           <Text style={[styles.txtInfor, {fontSize:20}]}>Tạm tính</Text>
-          <Text style={[styles.txtInfor, {fontSize:20, marginLeft:'50%', color:'red'}]}>141.800</Text>
+          <Text style={[styles.txtInfor, {fontSize:20, marginLeft:'50%', color:'red'}]}>{tienTam}</Text>
         </View>
       </View>
       <View style = {styles.tongTien}>
         <View style={{flexDirection:'row', margin:22}}>
           <Text style={[styles.txtInfor, {fontSize:20}]}>Thành tiền</Text>
-          <Text style={[styles.txtInfor, {fontSize:20, marginLeft:'50%', color:'red'}]}>141.800</Text>
+          <Text style={[styles.txtInfor, {fontSize:20, marginLeft:'50%', color:'red'}]}>{tongTien}</Text>
         </View>
         <View>
           <Button title='TIẾN HÀNH ĐẶT HÀNG' style={styles.btnDatHang}></Button>
