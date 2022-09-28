@@ -1,19 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 
-import blue from '../Lab3_c_Screen2/assets/img/vsmart_live_xanh.png';
-import black from '../Lab3_c_Screen2/assets/img/vsmart_black_star.png';
-import red from '../Lab3_c_Screen2/assets/img/vs_red.png';
-import gray from '../Lab3_c_Screen2/assets/img/vs_bac.png';
+// import blue from '../assets/img/vsmart_live_xanh.png';
+// import black from '../assets/img/vsmart_black_star.png';
+// import red from '../assets/img/vs_red.png';
+// import gray from '../assets/img/vs_bac.png';
 import { useState } from 'react';
 
-export default function App() {
-  const [img, setImg] = useState(blue);
+export default function Screen2({navigation}) {
+  var blue = require('../assets/img/vsmart_live_xanh.png');
+  var black = require('../assets/img/vsmart_black_star.png');
+  var red = require('../assets/img/vs_red.png');
+  var gray = require('../assets/img/vs_bac.png');
+  var imgSource = {blue, black, red, gray};  
+
+  const [img, setImg] = useState(imgSource.blue);
   const [nameColor, setNameColor] = useState('Blue');
-  function getColor(color, name){
-    setImg(color);
-    setNameColor(name)
-  }
+  const [link, setLink] = useState("");
+//   function getColor(color, name){
+//     setImg(color);
+//     setNameColor(name);
+//     //setLink(color);
+//   }
   return (
     <View style={styles.container}>
       <View style={styles.img}>
@@ -30,29 +39,51 @@ export default function App() {
       <View style={styles.color}>
           <Text style={[styles.txtContent, {marginTop:10, paddingLeft:10}]}>Chọn một màu bên dưới:</Text>
           <View style={styles.listColor}> 
-              <TouchableOpacity onPress={() => getColor(gray,'Gray')}>
+              <TouchableOpacity onPress={() => onPress4()}>
                 <View style={[styles.btnColor, {backgroundColor:'#C5F1FB'}]}></View>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => getColor(red,'Red')}>
+              <TouchableOpacity onPress={() => onPress3()}>
                 <View style={[styles.btnColor, {backgroundColor:'#F30D0D'}]}></View>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => getColor(black,'Black')}>
+              <TouchableOpacity onPress={() => onPress2()}>
                 <View style={[styles.btnColor, {backgroundColor:'#000000'}]}></View>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => getColor(blue,'Blue')}>
+              <TouchableOpacity onPress={() => onPress1()}>
                 <View style={[styles.btnColor, {backgroundColor:'#234896'}]}></View>
               </TouchableOpacity>
           </View>
       </View>
       <View style={styles.btnFinish}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate("Home",{message:link})}>
           <Text style={[styles.btnXong,{alignItems:'center'}]}>Xong</Text>
         </TouchableOpacity>
       </View>
       <StatusBar style="auto" />
     </View>
   );
+
+  function onPress1(){
+    setImg(imgSource.blue);
+    setNameColor("Xanh");
+    setLink(imgSource.blue)
+  }
+  function onPress2(){
+    setImg(imgSource.black);
+    setNameColor("Đen");
+    setLink(imgSource.black)
+  }
+  function onPress3(){
+    setImg(imgSource.red);
+    setNameColor("Đỏ");
+    setLink(imgSource.red)
+  }
+  function onPress4(){
+    setImg(imgSource.gray);
+    setNameColor("Bạc");
+    setLink(imgSource.gray)
+  }
 }
+
 
 const styles = StyleSheet.create({
   container: {
