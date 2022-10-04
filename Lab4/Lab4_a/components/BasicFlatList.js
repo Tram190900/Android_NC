@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { FlatList, StyleSheet, Text, TouchableWithoutFeedback, View, Image } from 'react-native';
+import { FlatList, StyleSheet, Text, TouchableWithoutFeedback, View, Image, TouchableOpacity } from 'react-native';
 import flatListData from '../flatListData';
 
 // function itemFlat({item, index}){
@@ -19,11 +19,16 @@ export default function BasicFlatList(){
                     return(
                         <View style={styles.itemContainer}>
                             <View>
-                                <View source={{uri:item.photo}}></View>
+                                <Image style={{height:100, width:100}} source={{uri:item.photo}}></Image>
                             </View>
-                            <View>
+                            <View style={{width:230}}>
                                 <Text style={styles.item}>{item.name}</Text>
                                 <Text>{item.email}</Text>
+                            </View>
+                            <View>
+                                <TouchableOpacity>
+                                    <Text style={styles.button}>Buy</Text>
+                                </TouchableOpacity>
                             </View>
                         </View>
                     );
@@ -36,25 +41,27 @@ export default function BasicFlatList(){
 }
 const styles = StyleSheet.create({
     container: {
-      marginTop: 60,
       flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor:'pink',
+      backgroundColor:'#E5E5E5',
     },
-    listItem:{
-      color:TouchableWithoutFeedback,
-      padding: 10
-    },
+    // listItem:{
+    //   color:TouchableWithoutFeedback,
+    //   padding: 10
+    // },
     itemContainer:{
+        flexDirection:'row',
         borderColor:'black',
-        borderWidth:1,
+        borderBottomWidth:1,
         backgroundColor:'white',
         padding:10,
-         width:300,
         marginTop:3,
+        alignItems:'center',
     },
     item:{
         fontSize:20,
+    },
+    button:{
+        backgroundColor:'red',
+        padding:10,
     }
   });

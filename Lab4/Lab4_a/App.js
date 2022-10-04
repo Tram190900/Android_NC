@@ -5,6 +5,9 @@ import BasicFlatList from './components/BasicFlatList';
 export default function App() {
   return (
     <View style={styles.container}>
+      <View>
+        <Text>Bạn có thắc mắc với sản phẩm vừa xem đừng ngại chát với shop!</Text>
+      </View>
       <BasicFlatList></BasicFlatList>
     </View>
   );
@@ -13,6 +16,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'gray',
+    backgroundColor: '#E5E5E5',
+    justifyContent:'center',
+    alignItems:'center',
+    paddingTop:40,
+    paddingBottom:40,
   },
 });
