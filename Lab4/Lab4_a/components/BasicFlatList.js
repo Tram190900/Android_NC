@@ -19,7 +19,7 @@ export default function BasicFlatList(){
                     return(
                         <View style={styles.itemContainer}>
                             <View>
-                                <Image style={{height:100, width:100}} source={{uri:item.photo}}></Image>
+                                <Image style={{height:150, width:100}} source={{uri:item.photo}}></Image>
                             </View>
                             <View style={{width:230}}>
                                 <Text style={styles.item}>{item.name}</Text>
@@ -41,13 +41,9 @@ export default function BasicFlatList(){
 }
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
       backgroundColor:'#E5E5E5',
+      flex:1,
     },
-    // listItem:{
-    //   color:TouchableWithoutFeedback,
-    //   padding: 10
-    // },
     itemContainer:{
         flexDirection:'row',
         borderColor:'black',
