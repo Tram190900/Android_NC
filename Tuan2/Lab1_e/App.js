@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+	import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View} from 'react-native';
 import {RadioButton} from 'react-native-paper';
 import{TextInput, Button} from '@react-native-material/core';
